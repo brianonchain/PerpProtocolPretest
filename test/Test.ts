@@ -34,14 +34,14 @@ describe("LeveargedAMM", function () {
 
   it("Should get expected USDC amount if user wants to long 1 ETH", async function () {
     const ethAmount = ethers.parseUnits("1", 18);
-    const usdcAmount = await leveragedAMM.getEthAmount(1, ethAmount);
+    const usdcAmount = await leveragedAMM.getUsdcAmount(1, ethAmount);
     const expectedUsdcAmount = k / (reserves.eth - ethAmount) - reserves.usdc;
     assert.equal(usdcAmount, expectedUsdcAmount);
   });
 
   it("Should get expected USDC amount if user wants to short 1 ETH", async function () {
     const ethAmount = ethers.parseUnits("1", 18);
-    const usdcAmount = await leveragedAMM.getEthAmount(-1, ethAmount);
+    const usdcAmount = await leveragedAMM.getUsdcAmount(-1, ethAmount);
     const expectedUsdcAmount = k / (reserves.eth + ethAmount) - reserves.usdc;
     assert.equal(usdcAmount, expectedUsdcAmount);
   });
