@@ -7,7 +7,8 @@ All logic was verified on Excel, [which can be downloaded here](https://docs.goo
 A few definitions that differs from the testing prompt:<br />
 accountValue = collateral + unrealizedPnl, where "collateral" is the amount of USDC deposited to the protocol<br />
 buyingPower = accountValue _ 10 - ethPositionValue, where ethPositionValue = ethPosition _ ethPrice<br />
-These changes had to be made for the Excel model to work out perfectly.
+The leverage value is chosen on the frontent. The parameter passed to the contract is (leverage) x (amount usdc entered).
+These changes were made for the Excel model to work out perfectly and to simplify the code.
 
 The repository contains 1 contract and 1 testing file.
 
