@@ -50,6 +50,6 @@ describe("LeveargedAMM", function () {
     const ethAmount = ethers.parseUnits("1", 18);
     const usdcAmount = await leveragedAMM.getUsdcAmount(-1, ethAmount);
     const expectedUsdcAmount = k / (reserves.eth + ethAmount) - reserves.usdc;
-    assert.equal(usdcAmount, expectedUsdcAmount);
+    assert.equal(usdcAmount, expectedUsdcAmount); // expect negative usdc
   });
 });
